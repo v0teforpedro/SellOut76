@@ -1,0 +1,91 @@
+nav .navbar-brand {
+    
+    /* size for brand */
+    font-size: xx-large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .white {
+    color: #fff;
+}
+
+nav .navbar-brand .yellow {
+    color: #f5b82e;
+}
+
+
+main .form-control {
+    
+    /* Center form controls */
+    display: inline-block;
+}
+
+main {
+    
+    /* Scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* Center contents */
+    text-align: center;
+}
+
+main img {
+    
+    /* Constrain images on small screens */
+    max-width: 100%;
+}
+
+body {
+    font-family: 'Share Tech Mono', monospace;
+}
+
+@font-face {
+    font-family: 'Overseer';
+    src: url('../static/OverseerItalic.otf');
+    font-weight: normal;
+}
+
+.row {
+    display: flex;
+    text-align: justify;
+}
+
+.column {
+    flex: 33.33%;
+    padding: 20px;
+}
+
+h4 {
+    text-align: center;
+}
+
+.redir {
+    transition: transform 0.3s;
+}
+
+.redir:hover {
+    transform: scale(1.2);
+}
+
+a:link {
+  color: #0089FF;
+  background-color: transparent;
+  text-decoration: none;
+  transition: color 0.3s linear;
+}
+a:visited {
+  color: #097DE4;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: #00FFE6;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: #00FF7F;
+  background-color: transparent;
+  text-decoration: underline;
+  transition: color 0.2s linear;
+}

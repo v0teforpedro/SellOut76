@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add
+{% endblock %}
+
+{% block main %}
+    <form action="/add" method="post">
+        <div class="form-group">
+            <select class="form-control col-md-4 bg-dark text-success" name="wtype" id="wtype">
+                <option disabled selected>Weapon Type</option>
+                <option value="-1">Melee</option>
+                <option value="1">Ranged</option>
+            </select>
+            <br>
+            <br>
+            <select class="form-control col-md-4 bg-dark text-success" name="wname" id="wname">
+                
+        <!--    I was able to remove below syntax, by performing table select population through Jquery code in fetch.js
+                
+                <option disabled selected>Weapon Name</option>
+                {% for weapon in weapons %}
+                    <option value="{{ weapon["id"] }}"> {{ weapon["name"] }} </option>
+                {% endfor %}
+        -->
+        
+            </select>
+            <br>
+            <br>
+            <select class="form-control col-md-4 bg-dark text-success" name="main_p" id="main_p"></select>
+            <br>
+            <br>
+            <select class="form-control col-md-4 bg-dark text-success" name="major_p" id="major_p"></select>
+            <br>
+            <br>
+            <select class="form-control col-md-4 bg-dark text-success" name="minor_p" id="minor_p"></select>
+        </div>
+        <br>
+        <button class="btn btn-outline-dark btn-lg" type="submit" id="submitbtn">Add Item</button>
+    </form>
+    <script src="/static/fetch.js"></script>
+{% endblock %}

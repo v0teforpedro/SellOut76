@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Inventory
+{% endblock %}
+
+{% block main %}
+    <input class="form-control col-sm-3 bg-dark text-success" autocomplete="off" id="myInput" type="text" placeholder="Search..">
+    <br>
+    <br>
+    <table class="table table-dark table-hover">
+        <thead style="border: solid" class="text-warning border-success">
+            <tr>
+                <th>Weapon</th>
+                <th>&#9734</th>
+                <th>&#9734 &#9734</th>
+                <th>&#9734 &#9734 &#9734</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="myTable" style="border: solid" class="text-success">
+            {% for row in rows %}
+            <tr>
+                <td> {{ row["w_name"] }} </td>
+                <td> {{ row["main_name"] }} </td>
+                <td> {{ row["mjp_descr"] if row["mjp_descr"] is not none else "—" }} </td> <!-- use of ternary conditional operator -->
+                <td> {{ row["mnp_descr"] if row["mnp_descr"] is not none else "—" }} </td> <!-- use of ternary conditional operator -->
+                <td>
+                    <form action="/inventory" method="post">
+                        <button class="btn btn-outline-danger btn-sm" type="submit" value="{{ row["uw_id"] }}" name="uw_id">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                            </svg>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <!-- search field function -->
+    <script>
+    $(document).ready(function(){
+        $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+    </script>
+{% endblock %}

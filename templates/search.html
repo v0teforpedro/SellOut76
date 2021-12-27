@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search
+{% endblock %}
+
+{% block main %}
+    <form action="/search" method="post">
+        <div class="form-group">
+            <select class="form-control col-md-4 bg-dark text-info" name="wtype" id="wtype">
+                <option disabled selected>Weapon Type</option>
+                <option value="-1">Melee</option>
+                <option value="1">Ranged</option>
+            </select>
+            <br>
+            <br>
+            <select class="form-control col-md-4 bg-dark text-info" name="wname" id="wname"></select>
+            <br>
+            <br>
+            <select class="form-control col-md-4 bg-dark text-info" name="main_p" id="main_p"></select>
+            <br>
+            <br>
+            <select class="form-control col-md-4 bg-dark text-info" name="major_p" id="major_p"></select>
+            <br>
+            <br>
+            <select class="form-control col-md-4 bg-dark text-info" name="minor_p" id="minor_p"></select>
+        </div>
+        <br>
+        <button class="btn btn-outline-dark btn-lg" type="submit" id="submitbtn">Search Item</button>
+    </form>
+    <script src="/static/fetch.js"></script>
+{% endblock %}

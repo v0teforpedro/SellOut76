@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control col-sm-4 bg-dark text-light" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control col-sm-4 bg-dark text-light" name="redditname" placeholder="Reddit username" type="text">
+        </div>
+        <div class="form-group">
+            <input class="form-control col-sm-4 bg-dark text-light" name="password" placeholder="Password" type="password">
+        </div>
+        <div class="form-group">
+            <input class="form-control col-sm-4 bg-dark text-light" name="confirmation" placeholder="Password (again)" type="password">
+        </div>
+        <br>
+        <button class="btn btn-outline-dark btn-lg" type="submit">Register</button>
+    </form>
+{% endblock %}
