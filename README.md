@@ -81,3 +81,9 @@ When this web-app goes live, I plan to implement following features:
 3. Install all dependencies
 4. Run Flask
 6. You are ready to go!
+
+## Acknowledgments
+
+* I'd like to thank Professor David J. Malan and all of the CS50's staff team for bringing this incredible course!
+* Also I want to give a big shout out to my friend Scraelos (https://github.com/Scraelos), you really helped me out to nail that dependent-dropdown in js! :)
+
