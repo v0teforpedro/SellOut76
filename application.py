@@ -1,5 +1,3 @@
-import os
-
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session, jsonify
 from flask_session import Session
@@ -74,7 +72,8 @@ def register():
         # hashing user's password
         hash = generate_password_hash(password)
         
-        # following operation will try to exeute sql query, and if it isn't successful, it returns apology that username is already taken
+        # following operation will try to execute sql query,
+        # and if it isn't successful, it returns apology that username is already taken
         try:
             db.execute("INSERT INTO users (username, redditname, hash) VALUES(?, ?, ?)", username, redditname, hash)
             
@@ -214,7 +213,6 @@ def options():
     return jsonify(weapons=weapons, mains=mains, majors=majors, minors=minors)
 
 
-
 @app.route("/inventory", methods=["GET", "POST"])
 @login_required
 def inventory():
@@ -286,7 +284,6 @@ def search():
         # check if input fields are blank or not valid
         if not wtype or wtype not in weapon_type:
             return apology("Invalid type")
-
 
         # query search from other users inventories using optional clauses
         query = """

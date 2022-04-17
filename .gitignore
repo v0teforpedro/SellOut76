@@ -1,1 +1,15 @@
+# Basics
+*.py[cod]
+*.pyc
 __pycache__/
+
+# virtual environments
+.env
+env/
+venv/
+venv
+env
+.venv
+
+# Pycharm
+.idea/
